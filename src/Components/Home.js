@@ -1,6 +1,5 @@
 import {useState, useEffect} from 'react'
-import * as Data from '../Database/Data'
-
+import axios from "axios";
 import BlogCard from "./BlogCard";
 
 const Head = {'fontFamily' : "'Inter', sans-serif", fontWeight : '700' }
@@ -10,13 +9,18 @@ const Home = () => {
     const [data, setData] = useState()
 
     useEffect(() => {
+        const fetchBlogs = async () => {
+            await axios.get('http://localhost:8888/blogs')
+                .then(res => setData(res))
+        }
 
+        fetchBlogs()
 
     }, [])
 
     return(
         <>
-            {console.log(data)}
+            {data && console.log(data)}
             <div className={'container mt-5 mb-5 p-5'} style={{'maxWidth': '1000px'}}>
                 <div className={'row'}>
                     <div className={'col-2'}>
@@ -31,9 +35,8 @@ const Home = () => {
                 </div>
 
             </div>
-
             <div className={'container mb-5'} style={{'maxWidth': '850px'}}>
-                {Data.blogs.map((blog) => {
+                {data && data.data.map((blog) => {
                     return(
                         <BlogCard blog={blog} />
                     )

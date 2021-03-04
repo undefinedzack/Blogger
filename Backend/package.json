@@ -1,0 +1,14 @@
+{
+  "name": "blogger",
+  "version": "1.0.0",
+  "description": "blogging app by @undefinedzack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adhney Nawghare",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

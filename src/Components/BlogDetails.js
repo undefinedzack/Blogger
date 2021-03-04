@@ -1,18 +1,24 @@
 import {useEffect, useState} from 'react'
 import ReactMarkdown from 'react-markdown'
-import * as Data from '../Database/Data'
 import {useParams} from 'react-router-dom'
+import axios from "axios";
 
 const BlogDetails = () => {
     const {id} = useParams()
+
     const [blog, setBlog] = useState()
 
     useEffect(() => {
-        Data.blogs.filter((blog) => {
-            if (blog.id === parseInt(id)) {
-                setBlog(blog)
-            }
-        })
+        const fetchBlogs = async () => {
+            await axios.get('http://localhost:8888/blogs')
+                .then(res => res.data.filter((blog) => {
+                    if (parseInt(blog.id) === parseInt(id)) {
+                        setBlog(blog)
+                    }
+                }))
+        }
+        fetchBlogs()
+
     }, [])
 
     return(
@@ -24,5 +30,4 @@ const BlogDetails = () => {
         </>
     )
 }
-
 export default BlogDetails
