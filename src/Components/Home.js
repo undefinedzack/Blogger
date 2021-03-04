@@ -1,6 +1,8 @@
 import {useState, useEffect} from 'react'
 import * as Data from '../Database/Data'
 
+import BlogCard from "./BlogCard";
+
 const Head = {'fontFamily' : "'Inter', sans-serif", fontWeight : '700' }
 
 const Home = () => {
@@ -15,7 +17,7 @@ const Home = () => {
     return(
         <>
             {console.log(data)}
-            <div className={'container mt-5 p-5'} style={{'maxWidth': '1000px'}}>
+            <div className={'container mt-5 mb-5 p-5'} style={{'maxWidth': '1000px'}}>
                 <div className={'row'}>
                     <div className={'col-2'}>
                         <a className="navbar-brand" href="#">
@@ -30,12 +32,12 @@ const Home = () => {
 
             </div>
 
-            <div className={'container'} style={{'maxWidth': '850px'}}>
-                <div className={'row'}>
-                    <div className={'col-4'}>
-                        <p style={{...Head, fontSize : '30px'}}>{Data.blogs[0].text}</p>
-                    </div>
-                </div>
+            <div className={'container mb-5'} style={{'maxWidth': '850px'}}>
+                {Data.blogs.map((blog) => {
+                    return(
+                        <BlogCard blog={blog} />
+                    )
+                })}
             </div>
 
             
