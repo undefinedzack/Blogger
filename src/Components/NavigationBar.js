@@ -1,14 +1,25 @@
 import {Link} from "react-router-dom";
-import {useEffect} from 'react'
+import {useState, useEffect} from 'react'
 
 const NavigationBar = () => {
 
-    const path = window.location.pathname
-    {console.log('path',path)}
+    const path = window.location.href
+    const url = 'http://localhost:3000/'
+
+    const [reRender, setReRender] = useState(false)
+    const [homeWeight, setHomeWeight] = useState('500')
+    const [createWeight, setCreateWeight] = useState('500')
 
     useEffect(() => {
-        console.log(path)
-    },[path])
+        if (path === url) {
+            setHomeWeight('700')
+            setCreateWeight('500')
+        }
+        else{
+            setCreateWeight('700')
+            setHomeWeight('500')
+        }
+    },[reRender])
 
     return(
         <>
@@ -24,10 +35,10 @@ const NavigationBar = () => {
                 <div className="container" style={{'maxWidth': '88%'}}>
                     <ul className={'navbar-nav'}>
                         <li className="nav-item">
-                            <Link className="nav-link active" aria-current="page" to={'/'}><p style={{'fontFamily' : "'Inter', sans-serif", fontWeight : '700', fontSize: '16px'}}>HOME</p></Link>
+                            <Link className="nav-link active" aria-current="page" to={'/'}><p onClick={() => setReRender(!reRender)} style={{'fontFamily' : "'Inter', sans-serif", fontWeight: homeWeight, fontSize: '16px'}}>HOME</p></Link>
                         </li>
                         <li className={'nav-item'}>
-                            <Link className="nav-link active" aria-current="page" to={'/createBlog'}><p style={{'fontFamily' : "'Inter', sans-serif", fontWeight : '500', fontSize: '16px'}}>CREATE</p></Link>
+                            <Link className="nav-link active" aria-current="page" to={'/createBlog'}><p onClick={() => setReRender(!reRender)} style={{'fontFamily' : "'Inter', sans-serif", fontWeight: createWeight, fontSize: '16px'}}>CREATE</p></Link>
                         </li>
                     </ul>
 

@@ -10,7 +10,7 @@ const CreateBlog = (props) => {
         "id" : Date.now(),
         "title" : "",
         "date" : new Date().toDateString(),
-        "description" : "this is a description",
+        "description" : "",
         "text" : ""
     })
 
@@ -41,7 +41,6 @@ const CreateBlog = (props) => {
                 </ul>
 
                 <div className="input-group mt-5">
-                    {/*<span className="input-group-text">Title</span>*/}
                     <textarea style={{height: '50px', borderRadius:'10px'}} placeholder={'Title'} className="form-control" aria-label="With textarea"
                               onChange={(e) => {
                                   setObj({
@@ -51,6 +50,7 @@ const CreateBlog = (props) => {
                               }}
                               value={obj.title}/>
                 </div>
+
                 <div className="input-group mt-5">
                     <textarea style={{height: '700px', borderRadius:'10px'}} className="form-control" aria-label="With textarea"
                               onChange={(e) => {
