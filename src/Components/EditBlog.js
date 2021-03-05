@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react'
 import axios from "axios";
+import {Link} from "react-router-dom";
 
 const EditBlog = (props) => {
 
@@ -17,8 +18,21 @@ const EditBlog = (props) => {
         <>
 
             <div className={'container'}>
+
+                <ul className="nav nav-tabs mt-4">
+                    <li className="nav-item">
+                        <p className="nav-link active" aria-current="page">Write</p>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to={{
+                            pathname: '/previewBlog',
+                            state: blog,
+                        }}>Preview</Link>
+                    </li>
+                </ul>
+
                 <div className="input-group mt-5">
-                    <textarea style={{height: '50px'}} placeholder={'Title'} className="form-control" aria-label="With textarea"
+                    <textarea style={{height: '50px', borderRadius:'10px'}} placeholder={'Title'} className="form-control" aria-label="With textarea"
                               onChange={(e) => {
                                   setBlog({
                                       ...blog,
@@ -28,7 +42,7 @@ const EditBlog = (props) => {
                               value={blog.title}/>
                 </div>
                 <div className="input-group mt-5">
-                    <textarea style={{height: '500px'}} className="form-control" aria-label="With textarea"
+                    <textarea style={{height: '700px', borderRadius:'10px'}} className="form-control" aria-label="With textarea"
                               onChange={(e) => {
                                   setBlog({
                                       ...blog,

@@ -1,7 +1,10 @@
 import {useState, useEffect} from 'react'
 import axios from "axios";
+import {Link} from "react-router-dom";
 
-const CreateBlog = () => {
+const CreateBlog = (props) => {
+
+    const blog = props.location.state
 
     const [obj, setObj] = useState({
         "id" : Date.now(),
@@ -11,6 +14,12 @@ const CreateBlog = () => {
         "text" : ""
     })
 
+    useEffect(() => {
+        if (blog) {
+            setObj(blog)
+        }
+    },[])
+
     const createBlog = () => {
         axios.post('http://localhost:8888/createBlog',obj)
             .then(res => console.log(res))
@@ -19,9 +28,21 @@ const CreateBlog = () => {
     return(
         <>
             <div className={'container'}>
+                <ul className="nav nav-tabs mt-4">
+                    <li className="nav-item">
+                        <p className="nav-link active" aria-current="page">Write</p>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to={{
+                            pathname: '/previewBlog',
+                            state: obj,
+                        }}>Preview</Link>
+                    </li>
+                </ul>
+
                 <div className="input-group mt-5">
                     {/*<span className="input-group-text">Title</span>*/}
-                    <textarea style={{height: '50px'}} placeholder={'Title'} className="form-control" aria-label="With textarea"
+                    <textarea style={{height: '50px', borderRadius:'10px'}} placeholder={'Title'} className="form-control" aria-label="With textarea"
                               onChange={(e) => {
                                   setObj({
                                       ...obj,
@@ -31,7 +52,7 @@ const CreateBlog = () => {
                               value={obj.title}/>
                 </div>
                 <div className="input-group mt-5">
-                    <textarea style={{height: '500px'}} className="form-control" aria-label="With textarea"
+                    <textarea style={{height: '700px', borderRadius:'10px'}} className="form-control" aria-label="With textarea"
                               onChange={(e) => {
                                   setObj({
                                       ...obj,
