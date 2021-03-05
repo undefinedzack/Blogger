@@ -18,7 +18,7 @@ const NavigationBar = () => {
                             <Link className="nav-link active" aria-current="page" to={'/'}><p style={{'fontFamily' : "'Inter', sans-serif", fontWeight : '700', fontSize: '16px'}}>HOME</p></Link>
                         </li>
                         <li className={'nav-item'}>
-                            <a className="nav-link active" aria-current="page" href="#"><p style={{'fontFamily' : "'Inter', sans-serif", fontWeight : '500', fontSize: '16px'}}>EDIT</p></a>
+                            <Link className="nav-link active" aria-current="page" to={'/createBlog'}><p style={{'fontFamily' : "'Inter', sans-serif", fontWeight : '500', fontSize: '16px'}}>CREATE</p></Link>
                         </li>
                     </ul>
 

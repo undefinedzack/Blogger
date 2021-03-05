@@ -5,7 +5,10 @@ const BlogCard = ({blog}) => {
         <>
             <div className={'row mt-5'}>
                 <div className={'col-8'}>
-                    <Link to={'/blog/'+blog.id} style={{textDecoration: 'none', color: '#000000'}}>
+                    <Link to={{
+                        pathname: '/blog/'+blog.id,
+                        state: blog,
+                    }} style={{textDecoration: 'none', color: '#000000'}}>
                         <p style={{'fontFamily' : "'Inter', sans-serif", fontWeight : '700', fontSize : '30px' }}>{blog.title}</p>
                     </Link>
                     <p style={{'fontFamily' : "'Inter', sans-serif", fontSize : '14px', fontWeight : '400' }}>{blog.date}</p>
