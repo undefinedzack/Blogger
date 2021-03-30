@@ -4,8 +4,6 @@ import {Link} from "react-router-dom";
 
 const CreateBlog = (props) => {
 
-
-
     const [obj, setObj] = useState({
         "title" : "",
         "date" : new Date().toDateString(),
@@ -19,7 +17,7 @@ const CreateBlog = (props) => {
         if (blog) {
             setObj(blog)
         }
-    },[])
+    },[]) // eslint-disable-next-line react-hooks/exhaustive-deps
 
     const createBlog = () => {
         axios.post('http://localhost:8888/blogs/',obj)

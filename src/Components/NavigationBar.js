@@ -28,7 +28,7 @@ const NavigationBar = () => {
                 <div className="container" style={{'maxWidth': '90%'}}>
                     <Link className="navbar-brand mt-3" to={'/'}><p style={{'fontFamily' : "'Inter', sans-serif", fontWeight : '700', fontSize: '24px'}}>Adhney Blog's</p></Link>
                     <a className="navbar-brand" href="https://adhney.codes/">
-                        <img className={'rounded-circle'} src="https://pbs.twimg.com/profile_images/1269507968476864513/zlWyVOmU_400x400.jpg" width="40" height="40" />
+                        <img alt={''} className={'rounded-circle'} src="https://pbs.twimg.com/profile_images/1269507968476864513/zlWyVOmU_400x400.jpg" width="40" height="40" />
                     </a>
                 </div>
             </nav>

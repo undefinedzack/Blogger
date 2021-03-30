@@ -14,13 +14,13 @@ const BlogDetails = () => {
                 .then(res => res.data.filter((blog) => {
                     if (parseInt(blog._id) === parseInt(id)) {
                         setBlog(blog)
-                        return 0
                     }
+                    return <></>
                 }))
         }
         fetchBlogs()
 
-    }, [blog])
+    }, [blog]) // eslint-disable-next-line react-hooks/exhaustive-deps
 
     const deleteBlog = () => {
         axios.delete('http://localhost:8888/blogs/'+blog._id)
