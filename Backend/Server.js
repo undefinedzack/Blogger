@@ -71,6 +71,6 @@ const saveBlog = (blog) => {
     fs.writeFileSync('db.json', blogData)
 }
 
-app.listen(8888, (err) => {
+app.listen(process.env.PORT || 8888, (err) => {
     if (err) console.log(err)
 })

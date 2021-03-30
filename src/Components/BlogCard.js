@@ -6,7 +6,7 @@ const BlogCard = ({blog}) => {
             <div className={'row mt-5'}>
                 <div className={'col-8'}>
                     <Link to={{
-                        pathname: '/blog/'+blog.id,
+                        pathname: '/blog/'+blog._id,
                         state: blog,
                     }} style={{textDecoration: 'none', color: '#000000'}}>
                         <p style={{'fontFamily' : "'Inter', sans-serif", fontWeight : '700', fontSize : '30px' }}>{blog.title}</p>
@@ -16,7 +16,7 @@ const BlogCard = ({blog}) => {
                 </div>
 
                 <div className={'col-4'}>
-                    <img src={blog.image}
+                    <img alt={''} src={blog.image}
                           width={'325px'}/>
                 </div>
             </div>

@@ -4,10 +4,9 @@ import {Link} from "react-router-dom";
 
 const CreateBlog = (props) => {
 
-    const blog = props.location.state
+
 
     const [obj, setObj] = useState({
-        "id" : Date.now(),
         "title" : "",
         "date" : new Date().toDateString(),
         "description" : "",
@@ -15,13 +14,15 @@ const CreateBlog = (props) => {
     })
 
     useEffect(() => {
+        const blog = props.location.state
+
         if (blog) {
             setObj(blog)
         }
     },[])
 
     const createBlog = () => {
-        axios.post('http://localhost:8888/createBlog',obj)
+        axios.post('http://localhost:8888/blogs/',obj)
             .then(res => console.log(res))
     }
 

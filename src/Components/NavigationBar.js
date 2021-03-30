@@ -3,7 +3,7 @@ import {useState, useEffect} from 'react'
 
 const NavigationBar = () => {
 
-    const path = window.location.href
+
     const url = 'http://localhost:3000/'
 
     const [reRender, setReRender] = useState(false)
@@ -11,6 +11,7 @@ const NavigationBar = () => {
     const [createWeight, setCreateWeight] = useState('500')
 
     useEffect(() => {
+        const path = window.location.href
         if (path === url) {
             setHomeWeight('700')
             setCreateWeight('500')

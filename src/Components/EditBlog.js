@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'
+import {useState} from 'react'
 import axios from "axios";
 import {Link} from "react-router-dom";
 
@@ -10,7 +10,7 @@ const EditBlog = (props) => {
 
 
     const editBlog = async () => {
-        await axios.patch('http://localhost:8888/editBlog/'+blog.id, blog)
+        await axios.patch('http://localhost:8888/blogs/editBlog/'+blog._id, blog)
             .then(res => console.log(res))
     }
 

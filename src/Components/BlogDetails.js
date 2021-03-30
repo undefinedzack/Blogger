@@ -4,16 +4,17 @@ import {useParams, Link} from 'react-router-dom'
 import axios from "axios";
 
 const BlogDetails = () => {
-    const {id} = useParams()
 
+    const {id} = useParams()
     const [blog, setBlog] = useState()
 
     useEffect(() => {
         const fetchBlogs = async () => {
             await axios.get('http://localhost:8888/blogs')
                 .then(res => res.data.filter((blog) => {
-                    if (parseInt(blog.id) === parseInt(id)) {
+                    if (parseInt(blog._id) === parseInt(id)) {
                         setBlog(blog)
+                        return 0
                     }
                 }))
         }
@@ -22,7 +23,7 @@ const BlogDetails = () => {
     }, [blog])
 
     const deleteBlog = () => {
-        axios.delete('http://localhost:8888/deleteBlog/'+blog.id)
+        axios.delete('http://localhost:8888/blogs/'+blog._id)
             .then(res => console.log(res))
     }
 
@@ -34,7 +35,7 @@ const BlogDetails = () => {
                     <hr />
                     <div className={'row text-center mt-2 mb-2 no-gutter'}>
                         <div className={'col-1'}>
-                            <img className={'rounded-circle'} src="https://pbs.twimg.com/profile_images/1269507968476864513/zlWyVOmU_400x400.jpg" width="70" height="70" />
+                            <img alt={''} className={'rounded-circle'} src="https://pbs.twimg.com/profile_images/1269507968476864513/zlWyVOmU_400x400.jpg" width="70" height="70" />
                         </div>
                         <div className={'col-4'}>
                             <p className={'mt-1'} style={{'fontFamily' : "'Inter', sans-serif", fontWeight : '700', fontSize: '18px'}}>Adhney Nawghare</p>
@@ -42,7 +43,7 @@ const BlogDetails = () => {
                         </div>
                         <div className={'col-2 ms-auto'}>
                             <Link to={{
-                                pathname: '/editBlog/'+blog.id,
+                                pathname: '/editBlog/'+blog._id,
                                 state: blog
                             }} style={{textDecoration: 'none', color: '#000000'}}>
                                 <i className="far fa-edit" /><p className={'mt-1'} style={{'fontFamily' : "'Inter', sans-serif", fontWeight : '500', fontSize: '14px'}}>Edit</p>

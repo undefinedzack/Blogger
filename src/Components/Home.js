@@ -24,9 +24,9 @@ const Home = () => {
             <div className={'container mt-5 mb-5 p-5'} style={{'maxWidth': '1000px'}}>
                 <div className={'row'}>
                     <div className={'col-2'}>
-                        <a className="navbar-brand" href="#">
-                            <img className={'rounded-circle'} src="https://pbs.twimg.com/profile_images/1269507968476864513/zlWyVOmU_400x400.jpg" width="120" height="120" />
-                        </a>
+                        {/*<a className="navbar-brand" href="#">*/}
+                            <img alt={''} className={'rounded-circle'} src="https://pbs.twimg.com/profile_images/1269507968476864513/zlWyVOmU_400x400.jpg" width="120" height="120" />
+                        {/*</a>*/}
                     </div>
                     <div className={'col-8 mt-4'}>
                         <p style={{...Head, fontSize : '24px'}}>Adhney Nawghare</p>

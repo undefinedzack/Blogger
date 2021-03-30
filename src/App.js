@@ -1,7 +1,7 @@
 import './App.css';
 import Home from './Components/Home';
 import NavigationBar from "./Components/NavigationBar";
-import {Link, BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import BlogDetails from "./Components/BlogDetails";
 import CreateBlog from "./Components/CreateBlog";
 import Footer from "./Components/Footer";
