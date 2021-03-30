@@ -10,7 +10,7 @@ const BlogDetails = () => {
 
     useEffect(() => {
         const fetchBlogs = async () => {
-            await axios.get('http://localhost:8888/blogs')
+            await axios.get('https://blogger-undefinedzack.herokuapp.com/blogs')
                 .then(res => res.data.filter((blog) => {
                     if (parseInt(blog._id) === parseInt(id)) {
                         setBlog(blog)
@@ -23,7 +23,7 @@ const BlogDetails = () => {
     }, [blog])
 
     const deleteBlog = () => {
-        axios.delete('http://localhost:8888/blogs/'+blog._id)
+        axios.delete('https://blogger-undefinedzack.herokuapp.com/blogs/'+blog._id)
             .then(res => console.log(res))
     }
 

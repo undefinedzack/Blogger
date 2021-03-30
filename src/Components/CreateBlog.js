@@ -21,7 +21,7 @@ const CreateBlog = (props) => {
     },[])
 
     const createBlog = () => {
-        axios.post('http://localhost:8888/blogs/',obj)
+        axios.post('https://blogger-undefinedzack.herokuapp.com/blogs/',obj)
             .then(res => console.log(res))
     }
 

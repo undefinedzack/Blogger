@@ -10,7 +10,7 @@ const Home = () => {
 
     useEffect(() => {
         const fetchBlogs = async () => {
-            await axios.get('http://localhost:8888/blogs')
+            await axios.get('https://blogger-undefinedzack.herokuapp.com/blogs')
                 .then(res => setData(res))
         }
 

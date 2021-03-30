@@ -10,7 +10,7 @@ const EditBlog = (props) => {
 
 
     const editBlog = async () => {
-        await axios.patch('http://localhost:8888/blogs/editBlog/'+blog._id, blog)
+        await axios.patch('https://blogger-undefinedzack.herokuapp.com/blogs/editBlog/'+blog._id, blog)
             .then(res => console.log(res))
     }
 

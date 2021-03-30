@@ -4,7 +4,7 @@ import {useState, useEffect} from 'react'
 const NavigationBar = () => {
 
 
-    const url = 'http://localhost:3000/'
+    const url = 'https://blogger-undefinedzack.vercel.app/'
 
     const [reRender, setReRender] = useState(false)
     const [homeWeight, setHomeWeight] = useState('500')
