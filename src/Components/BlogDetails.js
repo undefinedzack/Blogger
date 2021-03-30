@@ -19,8 +19,8 @@ const BlogDetails = () => {
                 }))
         }
         fetchBlogs()
-
-    }, [blog]) // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [blog])
 
     const deleteBlog = () => {
         axios.delete('http://localhost:8888/blogs/'+blog._id)

@@ -17,7 +17,8 @@ const CreateBlog = (props) => {
         if (blog) {
             setObj(blog)
         }
-    },[]) // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[])
 
     const createBlog = () => {
         axios.post('http://localhost:8888/blogs/',obj)
