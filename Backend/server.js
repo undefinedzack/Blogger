@@ -12,7 +12,6 @@ app.use((req, res, next) => {
 })
 app.use(express.json())
 
-const url = 'mongodb://127.0.0.1:27017/customers'
 mongoose.connect('mongodb+srv://'+process.env.ME+':'+process.env.PASSWORD+'@cluster0.dnnhc.mongodb.net/blogger-database?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true});
 
 const db = mongoose.connection
@@ -29,7 +28,7 @@ app.get('/', (req, res) => {
     res.send('server running!')
 })
 
-app.listen(8888, (err) => {
+app.listen(process.env.PORT || 8888, (err) => {
     if (err) console.log(err)
 })
 
