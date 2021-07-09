@@ -6,15 +6,15 @@ const NavigationBar = () => {
 
   const [reRender, setReRender] = useState(false);
   const [homeWeight, setHomeWeight] = useState("500");
-  // const [createWeight, setCreateWeight] = useState("500");
+  const [createWeight, setCreateWeight] = useState("500");
 
   useEffect(() => {
     const path = window.location.href;
     if (path === url) {
       setHomeWeight("700");
-      // setCreateWeight("500");
+      setCreateWeight("500");
     } else {
-      // setCreateWeight("700");
+      setCreateWeight("700");
       setHomeWeight("500");
     }
   }, [reRender]);
@@ -62,9 +62,24 @@ const NavigationBar = () => {
                 </p>
               </Link>
             </li>
-            {/* <li className={"nav-item"}> */}
-            {/* <Link className="nav-link active" aria-current="page" to={'/createBlog'}><p onClick={() => setReRender(!reRender)} style={{'fontFamily' : "'Inter', sans-serif", fontWeight: createWeight, fontSize: '16px'}}>CREATE</p></Link> */}
-            {/* </li> */}
+            <li className={"nav-item"}>
+              <Link
+                className="nav-link active"
+                aria-current="page"
+                to={"/createBlog"}
+              >
+                <p
+                  onClick={() => setReRender(!reRender)}
+                  style={{
+                    fontFamily: "'Inter', sans-serif",
+                    fontWeight: createWeight,
+                    fontSize: "16px",
+                  }}
+                >
+                  CREATE
+                </p>
+              </Link>
+            </li>
           </ul>
 
           <ul className="nav">
