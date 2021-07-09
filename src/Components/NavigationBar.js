@@ -38,7 +38,7 @@ const NavigationBar = () => {
             <img
               alt={""}
               className={"rounded-circle"}
-              src="https://pbs.twimg.com/profile_images/1269507968476864513/zlWyVOmU_400x400.jpg"
+              src="https://pbs.twimg.com/profile_images/1407267878735286278/ucDdzNwh_400x400.jpg"
               width="40"
               height="40"
             />
