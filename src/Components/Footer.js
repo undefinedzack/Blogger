@@ -14,7 +14,7 @@ const Footer = () => {
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container justify-content-center" style={{'maxWidth': '30%', height: '50px'}}>
                     <p style={{'fontFamily' : "'Inter', sans-serif", fontWeight : '400', fontSize: '14px'}}>Made with <i
-                        className="fas fa-heart" style={{color: 'red'}}/> by <b style={{fontSize: '16px'}}><a href={'adhney.codes'} style={{textDecoration: 'none', color:'#3e3b3b'}}> @undefinedzack</a></b> </p>
+                        className="fas fa-heart" style={{color: 'red'}}/> by <b style={{fontSize: '16px'}}><a href={'adhney.tech'} style={{textDecoration: 'none', color:'#3e3b3b'}}> @undefinedzack</a></b> </p>
                 </div>
             </nav>
         </>

@@ -34,7 +34,7 @@ const NavigationBar = () => {
               Adhney Blog's
             </p>
           </Link>
-          <a className="navbar-brand" href="https://adhney.codes/">
+          <a className="navbar-brand" href="https://adhney.tech/">
             <img
               alt={""}
               className={"rounded-circle"}
@@ -126,7 +126,7 @@ const NavigationBar = () => {
             <li className="nav-item">
               <a
                 className="nav-link text-decoration-none icon-color"
-                href="https://adhney.codes"
+                href="https://adhney.tech"
               >
                 <span className="fas fa-globe-asia fa-lg icon-color" />
               </a>
