@@ -39,7 +39,7 @@ const Home = () => {
             style={{ maxWidth: "1000px" }}
           >
             <div className={"row"}>
-              <div className={"col-2"}>
+              <div className={"col-12 col-md-2 d-flex justify-content-center"}>
                 <img
                   alt={""}
                   className={"rounded-circle"}
@@ -48,17 +48,28 @@ const Home = () => {
                   height="120"
                 />
               </div>
-              <div className={"col-8 mt-4"}>
-                <p style={{ ...Head, fontSize: "24px" }}>Adhney Nawghare</p>
-                <p
-                  style={{
-                    fontFamily: "'Inter', sans-serif",
-                    fontSize: "18px",
-                    fontWeight: "400",
-                  }}
-                >
-                  it's all about practice, neither if nor else.
-                </p>
+              <div className={"col-12 col-md-8 mt-4"}>
+                <div className="d-flex justify-content-center">
+                  <p
+                    style={{
+                      ...Head,
+                      fontSize: "24px",
+                    }}
+                  >
+                    Adhney Nawghare
+                  </p>
+                </div>
+                <div className="d-flex justify-content-center">
+                  <p
+                    style={{
+                      fontFamily: "'Inter', sans-serif",
+                      fontSize: "18px",
+                      fontWeight: "400",
+                    }}
+                  >
+                    it's all about practice, neither if nor else.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
